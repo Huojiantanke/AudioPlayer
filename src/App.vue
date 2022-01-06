@@ -9,11 +9,14 @@
 
 <script>
 import * as THREE from "./lib/three.module.js";
+// 轨道监听器
 import { OrbitControls } from "./lib/OrbitControls.js";
 import { GUI } from "./lib/dat.gui.module.js";
-
+// 可以做一个后期的处理效果的
 import { EffectComposer } from "./lib/EffectComposer.js";
+// 渲染轨道
 import { RenderPass } from "./lib/RenderPass.js";
+// 一个泛光的效果
 import { UnrealBloomPass } from "./lib/UnrealBloomPass.js";
 import { ShaderPass } from "./lib/ShaderPass.js";
 import { CopyShader } from "./lib/CopyShader.js";
@@ -62,7 +65,7 @@ export default {
       scene = new THREE.Scene();
       // scene.background = new THREE.TextureLoader().load(require('@/assets/bg2.jpg'));
 
-      {
+      
         scene.background = new THREE.CubeTextureLoader().load([
           require('@/assets/skybox/right.jpg'),
           require('@/assets/skybox/left.jpg'),
@@ -71,7 +74,7 @@ export default {
           require('@/assets/skybox/front.jpg'),
           require('@/assets/skybox/back.jpg')
         ]);
-      }
+      
       camera = new THREE.PerspectiveCamera(
         75,
         window.innerWidth / window.innerHeight,
